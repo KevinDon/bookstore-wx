@@ -46,7 +46,10 @@ let baseWebpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue': 'mpvue',
-      '@': resolve('src')
+      '@': resolve('src'),
+      '_components': resolve('src/components'),
+      '_assets': resolve('src/assets'),
+      '_static': resolve('static'),
     },
     symlinks: false,
     aliasFields: ['mpvue', 'weapp', 'browser'],
@@ -123,7 +126,7 @@ let baseWebpackConfig = {
         from: path.resolve(__dirname, '../static'),
         to: path.resolve(config.build.assetsRoot, './static'),
         ignore: ['.*']
-      }
+      },
     ])
   ]
 }

@@ -25,7 +25,11 @@
   },
   "dependencies": {
     "mpvue": "^2.0.0",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "mint-ui": "^2.2.13",
+    "muse-ui": "^3.0.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -80,7 +84,13 @@
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware-hard-disk": "^1.12.0",
     "webpack-merge": "^4.1.0",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "mint-ui": "^2.2.13",
+    "eslint-plugin-vue": "^5.0.0",
+    "mockjs": "^1.0.1-beta3",
+    "static": "^2.0.0",
+    "style-resources-loader": "^1.3.2",
+    "vue-cli-plugin-style-resources-loader": "^0.1.4"
   },
   "engines": {
     "node": ">= 4.0.0",
