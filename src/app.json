@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/advertisement/main",
+    "pages/cart/main",
+    "pages/account/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,10 +23,22 @@
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
-      "text": "订单",
-      "pagePath": "pages/logs/main",
-      "iconPath": "static/tabs/orders.png",
-      "selectedIconPath": "static/tabs/orders-active.png"
+      "text": "卖书",
+      "pagePath": "pages/advertisement/main",
+      "iconPath": "static/tabs/advertisement.png",
+      "selectedIconPath": "static/tabs/advertisement-active.png"
+    },
+    {
+      "text": "购物车",
+      "pagePath": "pages/cart/main",
+      "iconPath": "static/tabs/cartfull.png",
+      "selectedIconPath": "static/tabs/cartfull-active.png"
+    },
+    {
+      "text": "我的",
+      "pagePath": "pages/account/main",
+      "iconPath": "static/tabs/account.png",
+      "selectedIconPath": "static/tabs/account-active.png"
     }],
 
     "items": [{
@@ -34,10 +47,22 @@
       "icon": "static/tabs/home.png",
       "activeIcon": "static/tabs/home-active.png"
     }, {
-      "name": "订单",
-      "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
+      "name": "卖书",
+      "pagePath": "pages/advertisement/main",
+      "icon": "static/tabs/advertisement.png",
+      "activeIcon": "static/tabs/advertisement-active.png"
+    },
+    {
+      "name": "购物车",
+      "pagePath": "pages/cart/main",
+      "icon": "static/tabs/cartfull.png",
+      "activeIcon": "static/tabs/cartfull-active.png"
+    },
+    {
+      "name": "我的",
+      "pagePath": "pages/account/main",
+      "icon": "static/tabs/account.png",
+      "activeIcon": "static/tabs/account-active.png"
     }],
     "position": "bottom"
   }

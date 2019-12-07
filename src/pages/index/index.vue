@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import card from '@/components/card'
+import searchKeyword from '@/components/index/searchKeyword'
 
 export default {
   data () {
@@ -25,7 +25,7 @@ export default {
   },
 
   components: {
-    card
+    searchKeyword
   },
 
   methods: {
@@ -50,27 +50,31 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+  .index
+    margin 5px
   .header
     overflow hidden;
     float left;
     margin-left : 5px;
+    width 100%
     &>.logo
       float left;
       img
         height: 30px;
         width: 150px;
   &>.search
-     width 65%;
-     float right;
-    a
-      text-decoration: none;
-      cursor: pointer;
-      height 2rem
-      font-size: .8125rem;
-      line-height: 2rem;
-      display: block;
-      text-align: center;
-      color: #969ba3;
-      border-radius: .25rem;
-      background-color: #f5f5f5;
+       width 55%;
+       float right;
+       margin-right 5px;
+      a
+        text-decoration: none;
+        cursor: pointer;
+        height 30px
+        font-size: 12px;
+        line-height: 30px;
+        display: block;
+        text-align: center;
+        color: #969ba3;
+        border-radius: 5px;
+        background-color: #f5f5f5;
 </style>
