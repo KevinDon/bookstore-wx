@@ -15,6 +15,7 @@ module.exports = {
       '_components': resolve('src/components'),
       '_assets': resolve('src/assets'),
       '_static': resolve('static'),
+      '_view': resolve('src/iview-components'),
     }
   },
 }

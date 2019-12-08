@@ -1,4 +1,4 @@
-const  sysConfigs = require('@/lib/sysConfig');
+const  sysConfigs = require('@/libs/sysConfig');
 const Mock = require('mockjs'); // 获取mock对象
 const Random = Mock.Random; // 获取random对象，随机生成各种数据，具体请翻阅文档
 const code = 200; // 返回的状态码
@@ -135,7 +135,7 @@ const accountData = () => {
 }
 
 // 定义请求链接，类型，还有返回数据
-Mock.mock(`${sysConfigs.default.server.api.host}/login/`, 'post', LoginData);
-Mock.mock(`${sysConfigs.default.server.api.host}/base/books/searchImages.do/`, 'post', sliderData);
-Mock.mock(`${sysConfigs.default.server.api.host}/base/books/searchKeyword.do/`, 'post', keywordData);
-Mock.mock('http://localhost:8080/api/accounts/list/', 'get', accountData);
+Mock.mock(`${sysConfigs.default.server.api.host}/login/`, 'post', LoginData)
+Mock.mock(`${sysConfigs.default.server.api.host}/base/books/searchImages.do/`, 'post', sliderData)
+Mock.mock(`${sysConfigs.default.server.api.host}/base/books/searchKeyword.do/`, 'post', keywordData)
+Mock.mock('http://localhost:8080/api/accounts/list/', 'get', accountData)

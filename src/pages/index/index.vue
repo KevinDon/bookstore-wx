@@ -5,22 +5,27 @@
         <img src="/static/images/logo.png" alt="Book Store" />
       </div>
       <div class="search">
-        <a href="javascript:void (0)" id="searchPopup" @click="openSearchPopup(mtSearchConf)">
-          <i class="icon iconfont icon-search"></i>
+        <a href="javascript:void (0)" id="searchPopup" @click="openSearchPopup">
+          <i-icon type="search" size="12" color="#80848f" />
           {{bookName}}
         </a>
       </div>
+      <searchKeyword :conf="mtSearchConf" @setPopStatus="setPopStatus"  :searchShow="searchPopStatus" />
     </div>
   </div>
 </template>
 
 <script>
 import searchKeyword from '@/components/index/searchKeyword'
-
 export default {
+  name: 'Index',
   data () {
     return {
-      bookName: '诡秘之主'
+      bookName: '诡秘之主',
+      searchPopStatus: false,
+      mtSearchConf: {
+        getUrl: '/base/books/searchKeyword.do/'
+      }
     }
   },
 
@@ -29,17 +34,12 @@ export default {
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
+    openSearchPopup: function () {
+      console.log('test')
+      this.searchPopStatus = true
     },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
+    setPopStatus: function (status) {
+      this.searchPopStatus = status
     }
   },
 

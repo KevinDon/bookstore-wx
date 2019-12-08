@@ -1,0 +1,52 @@
+{
+  "server": {
+    "api": {
+      "host": "http://127.0.0.1/bookstore",
+      "host1": "http://59.42.42.188:86/shangjieti",
+      "host2": "/shangjieti",
+      "auth": {
+        "username": "admin",
+        "password": "admin"
+      }
+    }
+  },
+  "lang": "zh",
+  "system": {
+    "query": {
+      "page": 1,
+      "pageSize": 20
+    },
+    "router": {
+      "pages": [
+        {
+          "path": "/",
+          "name": "Home",
+          "title": "Home",
+          "component_name": "Home/Index",
+          "series": "Home"
+        },
+        {
+          "path": "/banner",
+          "name": "Banner",
+          "title": "Banner",
+          "component_name": "Banner/Banner",
+          "series": "Banner"
+        },
+        {
+          "path": "/cart",
+          "name": "Cart",
+          "title": "Cart",
+          "component_name": "Cart/Cart",
+          "series": "Cart"
+        },
+        {
+          "path": "/account",
+          "name": "Account",
+          "title": "Account",
+          "component_name": "Account/Account",
+          "series": "Account"
+        }
+      ]
+    }
+  }
+}
