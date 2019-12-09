@@ -36,77 +36,82 @@
 </template>
 
 <script>
-  import { fetch } from '@/utils/axios'
+  import { fetch } from '@/utils/axios';
   export default {
-    props: {
-      conf: {
-        type: Object,
-        default: () => {}
+      'props': {
+          'conf': {
+              'type': Object,
+              'default': () => {}
+          },
+          'searchShow': {
+              'type': Boolean,
+              'default': false
+          },
+          'callback': {}
       },
-      searchShow: {
-        type: Boolean,
-        default: false
+      data () {
+          return {
+              'placeholder': '诡秘之主',
+              'searchResult': []
+          };
       },
-      callback: {}
-    },
-    data () {
-      return {
-        placeholder: '诡秘之主',
-        searchResult: [ ]
+      'mounted': function () {
+          this.$nextTick(() => {
+              let me = this;
+
+              console.log(me);
+          });
+      },
+      'computed': {
+          mtSearchConf () {
+              let conf = this.conf ? this.conf : {};
+              let defaultConf = {
+                  'commodityName': '请输入书名/作者',
+                  'searchPopStatus': false,
+                  'searchClicked': false
+              };
+
+              return Object.assign({}, defaultConf, conf);
+          }
+      },
+      'methods': {
+          'getRemoteData': async function (conf) {
+              let me = this;
+
+              conf.searchClicked = true;
+              console.log('search');
+              let data = await fetch({
+                  'url': conf.getUrl,
+                  'method': 'post'
+              });
+
+              if (data) {
+                  console.log(data);
+                  me.searchResult = data;
+              } else {
+                  console.log('访问失败');
+              }
+          },
+          'handleClick': function () {
+              let me = this;
+
+              me.$emit('setPopStatus', false);
+              me.mtSearchConf.searchClicked = false;
+              me.mtSearchConf.searchResult = [];
+              console.log('handleClick');
+          },
+          'handleSearchClick': function () {
+              console.log('handleSearchClick');
+              this.getRemoteData(this.mtSearchConf);
+          },
+          'handleChange': function () {
+              console.log('HandleChange');
+          },
+          'handleConfirm': function () {
+              console.log('handleConfirm');
+          }
       }
-    },
-    mounted: function () {
-      this.$nextTick(() => {
-        let me = this
-        console.log(me)
-      })
-    },
-    computed: {
-      mtSearchConf () {
-        let conf = this.conf ? this.conf : {}
-        let defaultConf = {
-          commodityName: '请输入书名/作者',
-          searchPopStatus: false,
-          searchClicked: false
-        }
-        return Object.assign({}, defaultConf, conf)
-      }
-    },
-    methods: {
-      getRemoteData: async function (conf) {
-        let me = this
-        conf.searchClicked = true
-        console.log('search')
-        let data = await fetch({
-          url: conf.getUrl,
-          method: 'post'
-        })
-        if (data) {
-          console.log(data)
-          me.searchResult = data
-        } else {
-          console.log('访问失败')
-        }
-      },
-      handleClick: function () {
-        let me = this
-        me.$emit('setPopStatus', false)
-        me.mtSearchConf.searchClicked = false
-        me.mtSearchConf.searchResult = []
-        console.log('handleClick')
-      },
-      handleSearchClick: function () {
-        console.log('handleSearchClick')
-        this.getRemoteData(this.mtSearchConf)
-      },
-      handleChange: function () {
-        console.log('HandleChange')
-      },
-      handleConfirm: function () {
-        console.log('handleConfirm')
-      }
-    }
-  }
+  };
 </script>
 
 <style scoped lang="stylus">

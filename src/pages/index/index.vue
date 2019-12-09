@@ -16,37 +16,37 @@
 </template>
 
 <script>
-import searchKeyword from '@/components/index/searchKeyword'
+import searchKeyword from '@/components/index/searchKeyword';
 export default {
-  name: 'Index',
-  data () {
-    return {
-      bookName: '诡秘之主',
-      searchPopStatus: false,
-      mtSearchConf: {
-        getUrl: '/base/books/searchKeyword.do/'
-      }
-    }
-  },
-
-  components: {
-    searchKeyword
-  },
-
-  methods: {
-    openSearchPopup: function () {
-      console.log('test')
-      this.searchPopStatus = true
+    'name': 'Index',
+    data () {
+        return {
+            'bookName': '诡秘之主',
+            'searchPopStatus': false,
+            'mtSearchConf': {
+                'getUrl': '/base/books/searchKeyword.do/'
+            }
+        };
     },
-    setPopStatus: function (status) {
-      this.searchPopStatus = status
-    }
-  },
 
-  created () {
+    'components': {
+        searchKeyword
+    },
+
+    'methods': {
+        'openSearchPopup': function () {
+            console.log('test');
+            this.searchPopStatus = true;
+        },
+        'setPopStatus': function (status) {
+            this.searchPopStatus = status;
+        }
+    },
+
+    created () {
     // let app = getApp()
-  }
-}
+    }
+};
 </script>
 
 <style scoped lang="stylus">
