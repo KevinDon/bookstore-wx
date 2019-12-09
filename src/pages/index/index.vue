@@ -18,28 +18,31 @@
 <script>
 import searchKeyword from '@/components/index/searchKeyword';
 export default {
-    'name': 'Index',
+    name: 'Index',
     data () {
         return {
-            'bookName': '诡秘之主',
-            'searchPopStatus': false,
-            'mtSearchConf': {
+            bookName: '诡秘之主',
+            searchPopStatus: false,
+            mtSearchConf: {
                 'getUrl': '/base/books/searchKeyword.do/'
             }
         };
     },
 
-    'components': {
+    components: {
         searchKeyword
     },
 
-    'methods': {
-        'openSearchPopup': function () {
+    methods: {
+        openSearchPopup: function () {
             console.log('test');
             this.searchPopStatus = true;
         },
-        'setPopStatus': function (status) {
+        setPopStatus: function (status) {
             this.searchPopStatus = status;
+        },
+        getRemote: function(){
+            console.log('getRemote')
         }
     },
 
