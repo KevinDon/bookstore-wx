@@ -26,7 +26,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
 
-    "no-alert": 0,//禁止使用alert confirm prompt
+    "no-alert": 2,//禁止使用alert confirm prompt
     "no-array-constructor": 2,//禁止使用数组构造器
     "no-bitwise": 0,//禁止使用按位运算符
     "no-caller": 1,//禁止使用arguments.caller或arguments.callee
