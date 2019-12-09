@@ -46,7 +46,6 @@ module.exports = {
     "no-else-return": 2,//如果if语句里面有return,后面不能跟else语句
     "no-empty": 2,//块语句中的内容不能为空
     "no-empty-character-class": 2,//正则表达式中的[]内容不能为空
-    "no-labels": 2,//禁止使用空label
     "no-eq-null": 2,//禁止对null使用==或!=运算符
     "no-eval": 1,//禁止使用eval
     "no-ex-assign": 2,//禁止给catch语句中的异常参数赋值

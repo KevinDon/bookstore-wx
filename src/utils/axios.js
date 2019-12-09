@@ -87,17 +87,18 @@ function sendError (error) {
     let errorData = {
         type,
         data,
-        'message': msg
+        message: msg
     };
 
     console.log(errorData);
     // 1。store.dispatch('error/appendError', errorData)
     // 2。弹出
     wx.showToast({
-        'title': errorData.message,
-        'icon': 'none',
-        'duration': 3000,
-        'complete': (res) => {
+        title: errorData.message,
+        icon: 'none',
+        duration: 3000,
+        complete: (res) => {
+            console.log(res);
         }
     });
 }

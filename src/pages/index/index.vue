@@ -42,7 +42,7 @@ export default {
             this.searchPopStatus = status;
         },
         getRemote: function(){
-            console.log('getRemote')
+            console.log('getRemote');
         }
     },
 
