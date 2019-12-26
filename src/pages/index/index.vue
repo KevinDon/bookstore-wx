@@ -24,7 +24,7 @@ export default {
             bookName: '诡秘之主',
             searchPopStatus: false,
             mtSearchConf: {
-                'getUrl': '/base/books/searchKeyword.do/'
+                'getUrl': 'http://192.168.0.130:86/shangjieti/base/books/searchImages.do'
             }
         };
     },

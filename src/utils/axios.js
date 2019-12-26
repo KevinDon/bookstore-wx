@@ -23,7 +23,6 @@ Axios.defaults.adapter = function (config) {
             },
             'complete': res => {
                 wx.hideLoading();
-                // TODO:
             }
         });
     });
@@ -35,6 +34,7 @@ Axios.interceptors.request.use(
         return config;
     },
     error => {
+
         sendError(error);
         return Promise.reject(error.data);
     }
@@ -49,6 +49,7 @@ Axios.interceptors.response.use(
         return res;
     },
     error => {
+        console.log(error);
         sendError(error);
         return Promise.reject(error);
     });
@@ -84,6 +85,11 @@ function sendError (error) {
     } else {
         msg = error.message;
     }
+
+    if (error.errMsg) {
+        msg = error.errMsg;
+    }
+
     let errorData = {
         type,
         data,

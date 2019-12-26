@@ -11,6 +11,7 @@ const utils = {
     async apiRequest(url, form = {}, params = {}) {
         let apiUrl = url;
         // eslint-disable-next-line no-console
+
         console.log('发起交互:' + url, form);
         return await httpAxios.post(apiUrl, {
             params
@@ -18,13 +19,13 @@ const utils = {
             // eslint-disable-next-line no-console
             console.log('交互完毕:', res);
             if (res.code != 200) {
-                throw res.msg
+                throw res.msg;
             }
-            return res
+            return res;
         }).catch(error => {
             throw error;
-        })
-    },
+        });
+    }
 };
 
-export default utils
+export default utils;
