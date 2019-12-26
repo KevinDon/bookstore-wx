@@ -11,7 +11,7 @@
 							 @input="handleSearchClick"
 							 :type="text"
 					/>
-<!--					<a href="javascript:void(0)" class="search" @click="handleSearchClick">搜索</a>-->
+					<a href="javascript:void(0)" class="search" @click="handleSearchClick">搜索</a>
 					<a href="javascript:void(0)" class="searchCancel" @click="handleClick">取消</a>
 				</i-panel>
 			</label>
@@ -107,7 +107,7 @@
 	        'handleSearchClick': function () {
 	            console.log('handleSearchClick');
 	            this.searchResult = keywordData;
-	            console.log(this.searchResult);
+	            // console.log(this.searchResult);
 	            // return;
 	            // eslint-disable-next-line no-unreachable
 	            this.getRemoteData(this.mtSearchConf);
@@ -192,12 +192,12 @@
 
 	.searchInput
 		float left;
-		width 85%
+		width 70%
 
 		& > input
 			background-color #d9d9d9;
 
-	.searchCancel
+	.searchCancel,.search
 		float right;
 		width auto
 		line-height 45px
