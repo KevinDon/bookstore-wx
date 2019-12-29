@@ -7,28 +7,27 @@
 					avatar
 					avatar-size="128rpx"
 					:loading="skeLoading">
-					<van-iamge
-						v-if="userAvatarUrl"
+					<van-image
 						round
 						width="128"
 						height="128"
 						fit="cover"
 						lazy-load
-						:src="userAvatarUrl">
+						v-bind:src="userAvatarUrl">
 						<template v-slot:loading>
-							<van-loading type="spinner" size="20" />
+							<van-loading type="spinner" size="20"/>
 						</template>
-					</van-iamge>
+					</van-image>
 				</van-skeleton>
 			</van-col>
 		</van-row>
 		<van-row gutter="20">
-			<van-col span="10" offset="4">
+			<van-col span="10" offset="4" >
 				<van-skeleton
 					title
 					row="3"
 					:loading="skeLoading">
-					{{ userInfo.nickName }}
+					<view style="text-align: center">{{ userInfo.nickName }}</view>
 				</van-skeleton>
 				<button v-if="!userInfo.nickName" type="primary" open-type="getUserInfo"
 						bindgetuserinfo="bindGetUserInfo" @getuserinfo="userAuth">授权登录
@@ -101,9 +100,9 @@
                     return !Object.keys(this.userInfo).length > 0;
                 }
             },
-            userAvatarUrl:{
-                get(){
-                    return this.userInfo.avatarUrl || '';
+            userAvatarUrl: {
+                get() {
+                    return this.userInfo.hasOwnProperty('avatarUrl') ? this.userInfo.avatarUrl : '';
                 }
             }
 

@@ -1,7 +1,5 @@
 {
 	"usingComponents": {
-		"i-message": "../../static/iview/message/index",
-		"i-card": "../../static/iview/card/index",
-		"i-icon": "../../static/iview/icon/index"
+
 	}
 }
